@@ -96,7 +96,7 @@ function linkstart(){
   });
   $(".iemb_sidebar").css("height", "auto");
   $(".iemb_sidebar").css("min-height", "100%");
-  if(window.location.href.indexOf("iemb.hci.edu.sg") > -1){
+  if(window.location.href.indexOf("iemb.hci.edu.sg/Board") > -1){
     var link = document.createElement("link");
     link.href = "https://dl.dropboxusercontent.com/s/yed55pppaod34jd/iemb%2B.css";
     link.type = "text/css";
