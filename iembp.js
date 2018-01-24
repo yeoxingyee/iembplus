@@ -108,3 +108,15 @@ function linkstart(){
     document.getElementsByTagName("head")[0].appendChild(script);
   }
 }
+
+
+function checkmobile(){
+  if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        var mobilecss=document.createElement("link");
+        mobilecss.href = "https://yeoxingyee.github.io/iembplus/iemb_mobile.css";
+        mobilecss.type = "text/css";
+        mobilecss.rel = "stylesheet";
+        mobilecss.id = "mobilecss";
+        document.getElementsByTagName("head")[0].appendChild(mobilecss);
+    }
+  }
