@@ -63,7 +63,7 @@ function changeDP(){
   }
 }
 
-window.onload=function(){
+function linkstart(){
   $('img[alt="Important"]').css("filter", "invert(0)");
   $('img[alt="Urgent"]').css("filter", "invert(0)");
   $('img[alt="Information"]').css("filter", "invert(0)");
