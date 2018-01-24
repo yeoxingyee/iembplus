@@ -1,0 +1,42 @@
+.login-page {
+    float: none;
+    width:  100% !important;
+    padding: 0;
+    margin-top: 35%;
+}
+
+.form {
+    max-width: 100%;
+}
+
+img {
+    height: 330;
+    width: 350;
+    margin-bottom: 3%;
+}
+
+.com_name {
+    font-size: 45px;
+    margin-bottom: 5%;
+}
+
+.form input {
+    height: 6%;
+    font-size: 45px;
+    padding: 5%;
+    margin-top: 5%;
+}
+
+button#submitbut {
+    font-size: 50px;
+    margin-top: 10%;
+}
+
+footer#footerDiv {
+    font-size: 20px;
+}
+
+.read_mess_bg {
+    font-size: 20px;
+    margin-top: 20px;
+}
