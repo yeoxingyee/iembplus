@@ -62,3 +62,49 @@ function changeDP(){
     setDP();
   }
 }
+
+window.onload=function(){
+  $('img[alt="Important"]').css("filter", "invert(0)");
+  $('img[alt="Urgent"]').css("filter", "invert(0)");
+  $('img[alt="Information"]').css("filter", "invert(0)");
+  setDP();
+  $('.iemb_user_left>img').click(function(){ changeDP();});
+  $('.iemb_user_left>img').css("height", "40");
+  $('.iemb_user_left>img').css("width", "40");
+  $('.iemb_user_left>img').css("background-size", "cover");
+  var toggleDark;
+  if(localStorage.getItem("iEMBDark") == "0" || !localStorage.getItem("iEMBDark")){
+    toggleDark = '<li style="text-align:center;"><a href="#" id="DarkToggle"><i class="fa fa-moon-o" aria-hidden="true"></i><br />Dark Mode</a></li>';
+  }
+  else if(localStorage.getItem("iEMBDark") == "1"){
+    toggleDark = '<li style="text-align:center;"><a href="#" id="DarkToggle"><i class="fa fa-sun-o" aria-hidden="true"></i><br />Light Mode</a></li>';
+  }
+  $(toggleDark).insertBefore("#iemb_topnav .drop");
+  console.log("iEMB+: Initialisation complete! All systems green!");
+  $("#DarkToggle").click(function() {
+    if($("#darkMode").length){
+      $("#darkMode").remove();
+      document.getElementById("DarkToggle").innerHTML = "<i class='fa fa-moon-o' aria-hidden='true'></i><br />Dark Mode";
+      localStorage.setItem('iEMBDark', "0");
+      return;
+    }
+    if(!$("#darkMode").length){
+      document.getElementsByTagName("head")[0].appendChild(link);
+      document.getElementById("DarkToggle").innerHTML = "<i class='fa fa-sun-o' aria-hidden='true'></i><br />Light Mode";
+      localStorage.setItem('iEMBDark', "1");
+    }
+  });
+  $(".iemb_sidebar").css("height", "auto");
+  $(".iemb_sidebar").css("min-height", "100%");
+  if(window.location.href.indexOf("iemb.hci.edu.sg") > -1){
+    var link = document.createElement("link");
+    link.href = "https://dl.dropboxusercontent.com/s/yed55pppaod34jd/iemb%2B.css";
+    link.type = "text/css";
+    link.rel = "stylesheet";
+    link.id = "darkMode";
+    if(localStorage.getItem("iEMBDark") == "1") document.getElementsByTagName("head")[0].appendChild(link);
+    var script = document.createElement("script");
+    script.src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  }
+}
