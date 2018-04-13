@@ -23,8 +23,9 @@ function checkread(){
   if (!x){
     document.getElementById('verbose').innerHTML += 'Done!<br />';
     $('#reader a').text('Done! Reloading in 3 seconds...');
-    setTimeout(location.reload.bind(location), 3000);
     localStorage.setItem("iEMBre", "1");
+    console.log("Set value of iEMBre: " + localStorage.getItem('iEMBre'));
+    setTimeout(location.reload.bind(location), 3000);
   }
   else if(x) {
     document.getElementById('verbose').innerHTML += 'iEMB+: Not done yet! rerunning...<br />';
