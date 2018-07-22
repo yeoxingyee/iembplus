@@ -24,7 +24,7 @@ function autoread(){
 function checkread(){
   if (!x){
     document.getElementById('verbose').innerHTML += 'Done!<br />';
-    $('#reader a').text('Done! Reloading in ' timer + ' seconds...');
+    $('#reader a').text('Done! Reloading in ' + timer + ' seconds...');
     localStorage.setItem("iEMBre", "1");
     console.log("Set value of iEMBre: " + localStorage.getItem('iEMBre'));
     setTimeout(location.reload.bind(location), timer*1000);
