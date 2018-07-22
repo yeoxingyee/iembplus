@@ -1,4 +1,5 @@
 var i = 0;
+var timer=0;
 var x = $('.messageboard').length;
 function autoread(){
   document.getElementById('verbose').innerHTML += 'iEMB+: Running checks...<br />';
@@ -17,15 +18,16 @@ function autoread(){
   iframeread.src = $('a.messageboard')[i].href;
   x--;
   i++;
+  timer++;
   checkread();
 }
 function checkread(){
   if (!x){
     document.getElementById('verbose').innerHTML += 'Done!<br />';
-    $('#reader a').text('Done! Reloading in 3 seconds...');
+    $('#reader a').text('Done! Reloading in ' timer + ' seconds...');
     localStorage.setItem("iEMBre", "1");
     console.log("Set value of iEMBre: " + localStorage.getItem('iEMBre'));
-    setTimeout(location.reload.bind(location), 3000);
+    setTimeout(location.reload.bind(location), timer*1000);
   }
   else if(x) {
     document.getElementById('verbose').innerHTML += 'iEMB+: Not done yet! rerunning...<br />';
