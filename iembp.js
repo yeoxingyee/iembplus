@@ -24,7 +24,7 @@ function autoread(){
   var i = $(".hand1").length;
   while(i--){
       $(".hand1")[i].click();
-     console.log("Reading " + i + "th message.");
+      $('#reader a').text("Reading " + i + "th message.");
   }
 }
 
