@@ -1,16 +1,17 @@
 var i = 0;
 var timer=0;
-var x = $('.messageboard').length;
+var x = $(".hand1").length;
 function autoread(){
-  document.getElementById('verbose').innerHTML += 'iEMB+: Running checks...<br />';
-  document.getElementById('verbose').innerHTML += 'iEMB+: '+ x + ' messages remaining to read.<br />';
+  //document.getElementById('verbose').innerHTML += 'iEMB+: Running checks...<br />';
+  //document.getElementById('verbose').innerHTML += 'iEMB+: '+ x + ' messages remaining to read.<br />';
   $('#reader a').text('Reading all messages...');
-  /* if (x=='0'){
+  if (x=='0'){
     $('#reader a').text('All Messages are already Read!');
     document.getElementById('verbose').innerHTML='';
     setTimeout(function() { $('#reader a').text('Read All'); }, 2000);
     return;
   }
+  /* 
   var iframeread;
   iframeread = document.createElement('iframe');
   document.body.appendChild(iframeread);
@@ -21,10 +22,9 @@ function autoread(){
   timer++;
   checkread();
   */
-  var i = $(".hand1").length;
-  while(i--){
-      $(".hand1")[i].click();
-      $('#reader a').text("Reading " + i + "th message.");
+  while(x--){
+      $(".hand1")[x].click();
+      $('#reader a').text("Reading " + x + "th message.");
   }
 }
 
