@@ -1,6 +1,7 @@
 var i = 0;
 var timer=0;
-var x = $(".hand1").length;
+var i = $(".hand1").length;
+var x = i;
 function autoread(){
   //document.getElementById('verbose').innerHTML += 'iEMB+: Running checks...<br />';
   //document.getElementById('verbose').innerHTML += 'iEMB+: '+ x + ' messages remaining to read.<br />';
@@ -24,8 +25,10 @@ function autoread(){
   */
   while(x--){
       $(".hand1")[x].click();
-      $('#reader a').text("Reading " + x + "th message.");
+      $('#reader a').text("Reading " + x + "/" + i + "messages");
   }
+  $('#reader a').text('Done! Reloading in ' + i*300/1000 + ' seconds...');
+    setTimeout(location.reload.bind(location), i*300);
 }
 
 /*
