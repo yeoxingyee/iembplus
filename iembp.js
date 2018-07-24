@@ -5,7 +5,7 @@ function autoread(){
   document.getElementById('verbose').innerHTML += 'iEMB+: Running checks...<br />';
   document.getElementById('verbose').innerHTML += 'iEMB+: '+ x + ' messages remaining to read.<br />';
   $('#reader a').text('Reading all messages...');
-  if (x=='0'){
+  /* if (x=='0'){
     $('#reader a').text('All Messages are already Read!');
     document.getElementById('verbose').innerHTML='';
     setTimeout(function() { $('#reader a').text('Read All'); }, 2000);
@@ -20,7 +20,15 @@ function autoread(){
   i++;
   timer++;
   checkread();
+  */
+  var i = $(".hand1").length;
+  while(i--){
+      $(".hand1")[i].click();
+     console.log("Reading " + i + "th message.");
+  }
 }
+
+/*
 function checkread(){
   if (!x){
     document.getElementById('verbose').innerHTML += 'Done!<br />';
@@ -34,6 +42,8 @@ function checkread(){
     setTimeout(autoread(), 100);
   }
 }
+*/
+
 
 
 
